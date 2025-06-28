@@ -30,7 +30,7 @@ jobs:
         run: pnpm lint
 
       - name: 'Audit (high severity only) 🔒'
-        run: pnpm audit --severity high
+        run: pnpm audit --audit-level high
 
       - name: 'Build 🏗️'
         run: pnpm build
