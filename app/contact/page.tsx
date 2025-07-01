@@ -1,20 +1,18 @@
 "use client";
 
 export default function ContactPage() {
-  const textHeadline = "Get in Touch with Us";
-
   return (
     
     <main className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6">
       <section className="w-full max-w-2xl mb-12">
         <h1 className="text-4xl font-extralight text-black mb-8 text-center">
-          {textHeadline}
+          Get in Touch with Us
         </h1>
       </section>
       <section className="w-full max-w-md bg-white border border-black rounded-lg shadow-sm p-8">
-        <h1 className="text-2xl font-bold text-black mb-6 text-center">
+        <h2 className="text-2xl font-bold text-black mb-6 text-center">
           Contact Us
-        </h1>
+        </h2>
         <form className="space-y-5">
           <div>
             <label
