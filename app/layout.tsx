@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Buntega Kollektiv",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body>
         <Header />
         <div className="min-h-screen bg-white">{children}</div>
+        <Footer />
       </body>
     </html>
   );
