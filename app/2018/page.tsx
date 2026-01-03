@@ -82,7 +82,7 @@ export default function Festival2018() {
 
             {/* Right side - Festival poster */}
             <div className="flex justify-center">
-              <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center w-full max-w-md aspect-[3/4]">
+              <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center w-full max-w-md aspect-3/4">
                 <div className="h-full flex flex-col items-center justify-center">
                   <div className="w-16 h-16 mb-4 bg-gray-200 rounded-lg flex items-center justify-center">
                     <svg
@@ -191,7 +191,7 @@ export default function Festival2018() {
                 className="relative aspect-square bg-gray-200 rounded-lg cursor-pointer hover:opacity-80 transition-opacity group overflow-hidden"
                 onClick={() => openCarousel(index)}
               >
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+                <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
                   <div className="text-center">
                     <svg
                       className="w-8 h-8 text-gray-400 mx-auto mb-2"
@@ -259,7 +259,7 @@ export default function Festival2018() {
 
               {/* Image container */}
               <div className="max-w-4xl max-h-full bg-gray-200 rounded-lg flex items-center justify-center">
-                <div className="w-96 h-96 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg">
+                <div className="w-96 h-96 flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200 rounded-lg">
                   <div className="text-center">
                     <svg
                       className="w-16 h-16 text-gray-400 mx-auto mb-4"
