@@ -1,10 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 import { useState } from "react";
 import { imagesFrom2018 } from "@/lib/get-images";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 export default function Festival2018() {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
@@ -20,14 +27,6 @@ export default function Festival2018() {
 
   const closeCarousel = () => {
     setIsCarouselOpen(false);
-  };
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % 12);
-  };
-
-  const previousImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + 12) % 12);
   };
 
   return (
@@ -59,7 +58,7 @@ export default function Festival2018() {
               </h2>
               <p className="text-lg font-light text-gray-700 leading-relaxed mb-8">
                 Our inaugural festival marked the beginning of something
-                special. A gathering of artists, musicians, and creative minds
+                special. A gathering of people who love to cook, artists, musicians, and creative minds
                 who shared a vision of community through art. The first Buntega
                 Kollektiv festival set the foundation for what would become an
                 annual celebration of creativity and connection.
@@ -67,7 +66,6 @@ export default function Festival2018() {
 
               {/* YouTube Video Placeholder */}
               <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/9iyyUmBTrsw?si=QaygxA3Y-nBdGRbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <p className="text-gray-500 font-light">
                   YouTube Video Placeholder
                 </p>
@@ -182,19 +180,16 @@ export default function Festival2018() {
                 onClick={() => openCarousel(index)}
               >
                 <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
-                  <div className="text-center">
-                    <Image
-                      src={images[imageKeys[index]].url}
-                      alt={`Festival Photo ${index + 1}`}
-                      width={400}
-                      height={400}
-                      className="object-cover w-full h-full"
-                    />
-                    <p className="text-xs text-gray-500 font-light">
-                      Photo {index + 1}
-                    </p>
-                  </div>
+
+                  <Image
+                    src={images[imageKeys[index]].url}
+                    alt={`Festival Photo ${index + 1}`}
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+
               </div>
             ))}
           </div>
@@ -202,88 +197,41 @@ export default function Festival2018() {
 
         {/* Carousel Modal */}
         {isCarouselOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
-            <div className="relative w-full h-full flex items-center justify-center p-4">
-              {/* Close button */}
-              <button
-                onClick={closeCarousel}
-                className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
 
-              {/* Previous button */}
-              <button
-                onClick={previousImage}
-                className="absolute left-4 text-white hover:text-gray-300 z-10"
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
+            <button
+              onClick={closeCarousel}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+            >
+              <X className="w-6 h-6" />
+            </button>
 
-              {/* Image container */}
-              <div className="max-w-4xl max-h-full bg-gray-200 rounded-lg flex items-center justify-center">
-                <div className="w-96 h-96 flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200 rounded-lg">
-                  <div className="text-center">
-                    <Image
-                      src={images[imageKeys[currentImageIndex]].url}
-                      alt={`Festival Photo ${currentImageIndex + 1}`}
-                      width={800}
-                      height={800}
-                      className="object-cover w-full h-full rounded-lg"
-                    />
-                  </div>
-                </div>
-              </div>
+            <Carousel
+              opts={{
+                startIndex: currentImageIndex,
+              }}
 
-              {/* Next button */}
-              <button
-                onClick={nextImage}
-                className="absolute right-4 text-white hover:text-gray-300 z-10"
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
+            >
+              <CarouselContent>
+                {imageKeys.map((key, index) => (
+                  <CarouselItem key={index}>
+                    <div className="flex items-center justify-center h-screen w-full">
+                      <Image
+                        src={images[key].url}
+                        alt={`Festival Photo ${index + 1}`}
+                        width={600}
+                        height={600}
+                      />
+                    </div>
 
-              {/* Image counter */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
-                {currentImageIndex + 1} / 12
-              </div>
-            </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-0 text-white" />
+              <CarouselNext className="absolute right-0 text-white" />
+            </Carousel>
+
+
           </div>
         )}
       </section>
