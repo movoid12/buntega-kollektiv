@@ -3,10 +3,15 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { imagesFrom2018 } from "@/lib/get-images";
+import Image from "next/image";
 
 export default function Festival2018() {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = imagesFrom2018; // Assuming this is an array of image metadata for 2018
+  const imageKeys = Object.keys(images);
 
   const openCarousel = (index: number) => {
     setCurrentImageIndex(index);
@@ -62,15 +67,7 @@ export default function Festival2018() {
 
               {/* YouTube Video Placeholder */}
               <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/9iyyUmBTrsw?si=QaygxA3Y-nBdGRbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <p className="text-gray-500 font-light">
                   YouTube Video Placeholder
                 </p>
@@ -84,24 +81,17 @@ export default function Festival2018() {
             <div className="flex justify-center">
               <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center w-full max-w-md aspect-3/4">
                 <div className="h-full flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 mb-4 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-8 h-8 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21,15 16,10 5,21" />
-                    </svg>
+                  <div>
+                    <img
+                      src="/2018/Poster.jpg"
+                      alt="2018 Poster"
+                      className="object-fit w-full h-full rounded-lg"
+                    />
                   </div>
                   <p className="text-gray-500 font-light mb-2">
-                    Festival Poster 2018
+                    Buntega Poster 2018
                   </p>
-                  <p className="text-sm text-gray-400">
-                    Placeholder for festival artwork
-                  </p>
+                  <p className="text-sm text-gray-400">Designed by Ćaner</p>
                 </div>
               </div>
             </div>
@@ -193,16 +183,13 @@ export default function Festival2018() {
               >
                 <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
                   <div className="text-center">
-                    <svg
-                      className="w-8 h-8 text-gray-400 mx-auto mb-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21,15 16,10 5,21" />
-                    </svg>
+                    <Image
+                      src={images[imageKeys[index]].url}
+                      alt={`Festival Photo ${index + 1}`}
+                      width={400}
+                      height={400}
+                      className="object-cover w-full h-full"
+                    />
                     <p className="text-xs text-gray-500 font-light">
                       Photo {index + 1}
                     </p>
@@ -261,22 +248,13 @@ export default function Festival2018() {
               <div className="max-w-4xl max-h-full bg-gray-200 rounded-lg flex items-center justify-center">
                 <div className="w-96 h-96 flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200 rounded-lg">
                   <div className="text-center">
-                    <svg
-                      className="w-16 h-16 text-gray-400 mx-auto mb-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21,15 16,10 5,21" />
-                    </svg>
-                    <p className="text-gray-500 font-light">
-                      Festival Photo {currentImageIndex + 1}
-                    </p>
-                    <p className="text-sm text-gray-400 mt-2">
-                      Placeholder for gallery image
-                    </p>
+                    <Image
+                      src={images[imageKeys[currentImageIndex]].url}
+                      alt={`Festival Photo ${currentImageIndex + 1}`}
+                      width={800}
+                      height={800}
+                      className="object-cover w-full h-full rounded-lg"
+                    />
                   </div>
                 </div>
               </div>
