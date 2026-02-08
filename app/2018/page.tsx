@@ -105,25 +105,72 @@ export default function Festival2018() {
               <h3 className="text-3xl font-light text-black mb-6">Lineup</h3>
               <div className="space-y-4">
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="text-xl font-light text-black">Main Stage</h4>
+                  <h4 className="text-xl font-light text-black">Theresa</h4>
                   <p className="text-gray-600 font-light mt-2">
-                    Electronic • Ambient • Experimental
+                    Singer/Songwriter
                   </p>
                 </div>
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black"> „Kids of Teheran“ </h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    Short film from Daniel Asadi Faezi
+                  </p>
+                </div>
+
                 <div className="border-b border-gray-200 pb-4">
                   <h4 className="text-xl font-light text-black">
-                    Art Installations
+                    PiPaPo
                   </h4>
                   <p className="text-gray-600 font-light mt-2">
-                    Interactive • Visual • Immersive
+                    Math Rock /  Indie Rock band
                   </p>
                 </div>
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="text-xl font-light text-black">Workshops</h4>
+                  <h4 className="text-xl font-light text-black">"Approaching Truckdrivers" </h4>
                   <p className="text-gray-600 font-light mt-2">
-                    Sound Design • Visual Arts • Community Building
+                    Documentary from Daniel Asadi Faezi
                   </p>
                 </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black">Gatti Randali</h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    Balcan / Oriental / Flamenco band
+                  </p>
+                </div>
+
+                
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black"> Yaxinem</h4>
+                  <p className="text-gray-600 font-light mt-2">
+                     Hip-Hop & Trap music
+                  </p>
+                </div>
+
+                
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black">M.LCDP & Mrs.Mojo.Risin</h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    Latino / Deep House DJ set
+                  </p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black">DJ Buti (Buti Sekhalanga - DJ Buti) </h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    Afro Drumbeat DJ set
+                  </p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black">DJ Naitwa </h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    House / Techno DJ set
+                  </p>
+                </div>
+
+
               </div>
             </div>
             <div>
@@ -133,31 +180,40 @@ export default function Festival2018() {
               <div className="space-y-6">
                 <div>
                   <h4 className="text-xl font-light text-black mb-2">
-                    Opening Ceremony
+                    Cooking Workshop with Lukas & Mouaz
                   </h4>
                   <p className="text-gray-600 font-light leading-relaxed">
-                    A collective meditation and sound bath that set the tone for
-                    three days of artistic exploration.
+                    Syrian-German fusion cooking workshop where participants learned to make traditional dishes while sharing stories and cultural insights.
                   </p>
                 </div>
+
                 <div>
                   <h4 className="text-xl font-light text-black mb-2">
-                    Community Garden
+                    Loom Workshop with Andrea
                   </h4>
                   <p className="text-gray-600 font-light leading-relaxed">
-                    Participants collaborated to create a temporary garden
-                    installation that grew throughout the festival.
+                    Weaving in the Garden
                   </p>
                 </div>
+
+                    <div>
+                  <h4 className="text-xl font-light text-black mb-2">
+                    DJ Musik Workshop with DJ dørbystarr
+                  </h4>
+                  <p className="text-gray-600 font-light leading-relaxed">
+                     DJ dørbystarr from Leipzig will be here, spinning HipHop and doing events like this. He's been doing it for 15 years! He'll be showing the ropes of being a DJ, making music, jamming, beatboxing, and freestyling. Bring your instruments!
+                  </p>
+                </div>
+
                 <div>
                   <h4 className="text-xl font-light text-black mb-2">
-                    Closing Circle
+                    Photo Workshop with Miguel
                   </h4>
                   <p className="text-gray-600 font-light leading-relaxed">
-                    A gathering where attendees shared their experiences and
-                    planted seeds for future festivals.
+                    The workshop is about the composition rules of photography. We'll look at and analyze pictures, discuss opinions, take photos, and discuss them. After that, you'll walk around Rabet Park and take pictures for the festival. A phone is sufficient, no professional camera necessary.
                   </p>
                 </div>
+
               </div>
             </div>
           </div>
@@ -187,6 +243,8 @@ export default function Festival2018() {
                     width={400}
                     height={400}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+
                   />
                 </div>
 
@@ -221,6 +279,7 @@ export default function Festival2018() {
                         alt={`Festival Photo ${index + 1}`}
                         width={600}
                         height={600}
+                        loading="lazy"
                       />
                     </div>
 
