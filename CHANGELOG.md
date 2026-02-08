@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/movoid12/buntega-kollektiv/compare/v1.0.0...v1.1.0) (2026-02-08)
+
+
+### Features
+
+* **2018-page:** add images and update content for the carousel ([#13](https://github.com/movoid12/buntega-kollektiv/issues/13)) ([e2b6767](https://github.com/movoid12/buntega-kollektiv/commit/e2b676749b51217dfba388b587226ed914b04bb9))
+
 ## 1.0.0 (2026-01-03)
 
 
