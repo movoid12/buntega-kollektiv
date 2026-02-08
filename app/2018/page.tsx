@@ -81,7 +81,7 @@ export default function Festival2018() {
                 <div className="h-full flex flex-col items-center justify-center">
                   <div>
                     <Image
-                      src="/2018/Poster.jpg"
+                      src="https://res.cloudinary.com/dzk4ocmiz/image/upload/v1770587777/Poster_w5tcqn.jpg"
                       alt="2018 Poster"
                       width={400}
                       height={533}
