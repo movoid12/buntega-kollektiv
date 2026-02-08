@@ -80,9 +80,11 @@ export default function Festival2018() {
               <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center w-full max-w-md aspect-3/4">
                 <div className="h-full flex flex-col items-center justify-center">
                   <div>
-                    <img
+                    <Image
                       src="/2018/Poster.jpg"
                       alt="2018 Poster"
+                      width={400}
+                      height={533}
                       className="object-fit w-full h-full rounded-lg"
                     />
                   </div>
@@ -111,7 +113,7 @@ export default function Festival2018() {
                   </p>
                 </div>
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="text-xl font-light text-black"> „Kids of Teheran“ </h4>
+                  <h4 className="text-xl font-light text-black">&quot;Kids of Teheran&quot;</h4>
                   <p className="text-gray-600 font-light mt-2">
                     Short film from Daniel Asadi Faezi
                   </p>
@@ -126,7 +128,7 @@ export default function Festival2018() {
                   </p>
                 </div>
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="text-xl font-light text-black">"Approaching Truckdrivers" </h4>
+                  <h4 className="text-xl font-light text-black">&quot;Approaching Truckdrivers&quot;</h4>
                   <p className="text-gray-600 font-light mt-2">
                     Documentary from Daniel Asadi Faezi
                   </p>
@@ -201,7 +203,7 @@ export default function Festival2018() {
                     DJ Musik Workshop with DJ dørbystarr
                   </h4>
                   <p className="text-gray-600 font-light leading-relaxed">
-                     DJ dørbystarr from Leipzig will be here, spinning HipHop and doing events like this. He's been doing it for 15 years! He'll be showing the ropes of being a DJ, making music, jamming, beatboxing, and freestyling. Bring your instruments!
+                     DJ dørbystarr from Leipzig will be here, spinning HipHop and doing events like this. He&apos;s been doing it for 15 years! He&apos;ll be showing the ropes of being a DJ, making music, jamming, beatboxing, and freestyling. Bring your instruments!
                   </p>
                 </div>
 
@@ -210,7 +212,7 @@ export default function Festival2018() {
                     Photo Workshop with Miguel
                   </h4>
                   <p className="text-gray-600 font-light leading-relaxed">
-                    The workshop is about the composition rules of photography. We'll look at and analyze pictures, discuss opinions, take photos, and discuss them. After that, you'll walk around Rabet Park and take pictures for the festival. A phone is sufficient, no professional camera necessary.
+                    The workshop is about the composition rules of photography. We will look at and analyze pictures, discuss opinions, take photos, and discuss them. After that, you will walk around Rabet Park and take pictures for the festival. A phone is sufficient, no professional camera necessary.
                   </p>
                 </div>
 
@@ -229,25 +231,22 @@ export default function Festival2018() {
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {Array.from({ length: 12 }, (_, index) => (
+            {imageKeys.map((key, index) => (
               <div
                 key={index}
                 className="relative aspect-square bg-gray-200 rounded-lg cursor-pointer hover:opacity-80 transition-opacity group overflow-hidden"
                 onClick={() => openCarousel(index)}
               >
                 <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
-
                   <Image
-                    src={images[imageKeys[index]].url}
+                    src={images[key].url}
                     alt={`Festival Photo ${index + 1}`}
                     width={400}
                     height={400}
                     className="w-full h-full object-cover"
                     loading="lazy"
-
                   />
                 </div>
-
               </div>
             ))}
           </div>

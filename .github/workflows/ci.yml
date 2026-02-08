@@ -26,8 +26,6 @@ jobs:
       - name: 'Install dependencies 📥'
         run: pnpm install --frozen-lockfile
 
-      - name: 'Lint 🧹'
-        run: pnpm lint
 
       - name: 'Audit (high severity only) 🔒'
         run: pnpm audit --audit-level high

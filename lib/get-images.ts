@@ -19,4 +19,8 @@ export const imagesFrom2018: Record<string, ImageMetaData> = {
     '13': { id: '13', url: '../2018/2018_img_20.jpg' },
     '14': { id: '14', url: '../2018/2018_img_22.jpg' },
     '15': { id: '15', url: '../2018/2018_img_23.jpg' },
+    '16': { id: '16', url: '../2018/2018_img_24.jpg' },
+    '17': { id: '17', url: '../2018/2018_img_25.jpg' },
+    '18': { id: '18', url: '../2018/2018_img_26.jpg' },
+
 }
