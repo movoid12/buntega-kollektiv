@@ -229,25 +229,22 @@ export default function Festival2018() {
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {Array.from({ length: 12 }, (_, index) => (
+            {imageKeys.map((key, index) => (
               <div
                 key={index}
                 className="relative aspect-square bg-gray-200 rounded-lg cursor-pointer hover:opacity-80 transition-opacity group overflow-hidden"
                 onClick={() => openCarousel(index)}
               >
                 <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
-
                   <Image
-                    src={images[imageKeys[index]].url}
+                    src={images[key].url}
                     alt={`Festival Photo ${index + 1}`}
                     width={400}
                     height={400}
                     className="w-full h-full object-cover"
                     loading="lazy"
-
                   />
                 </div>
-
               </div>
             ))}
           </div>
