@@ -1,12 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 import { useState } from "react";
+import { imagesFrom2018 } from "@/lib/get-images";
+import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 export default function Festival2018() {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = imagesFrom2018; // Assuming this is an array of image metadata for 2018
+  const imageKeys = Object.keys(images);
 
   const openCarousel = (index: number) => {
     setCurrentImageIndex(index);
@@ -15,14 +27,6 @@ export default function Festival2018() {
 
   const closeCarousel = () => {
     setIsCarouselOpen(false);
-  };
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % 12);
-  };
-
-  const previousImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + 12) % 12);
   };
 
   return (
@@ -54,7 +58,7 @@ export default function Festival2018() {
               </h2>
               <p className="text-lg font-light text-gray-700 leading-relaxed mb-8">
                 Our inaugural festival marked the beginning of something
-                special. A gathering of artists, musicians, and creative minds
+                special. A gathering of people who love to cook, artists, musicians, and creative minds
                 who shared a vision of community through art. The first Buntega
                 Kollektiv festival set the foundation for what would become an
                 annual celebration of creativity and connection.
@@ -62,15 +66,6 @@ export default function Festival2018() {
 
               {/* YouTube Video Placeholder */}
               <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
                 <p className="text-gray-500 font-light">
                   YouTube Video Placeholder
                 </p>
@@ -84,24 +79,17 @@ export default function Festival2018() {
             <div className="flex justify-center">
               <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center w-full max-w-md aspect-3/4">
                 <div className="h-full flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 mb-4 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-8 h-8 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21,15 16,10 5,21" />
-                    </svg>
+                  <div>
+                    <img
+                      src="/2018/Poster.jpg"
+                      alt="2018 Poster"
+                      className="object-fit w-full h-full rounded-lg"
+                    />
                   </div>
                   <p className="text-gray-500 font-light mb-2">
-                    Festival Poster 2018
+                    Buntega Poster 2018
                   </p>
-                  <p className="text-sm text-gray-400">
-                    Placeholder for festival artwork
-                  </p>
+                  <p className="text-sm text-gray-400">Designed by Ćaner</p>
                 </div>
               </div>
             </div>
@@ -117,25 +105,72 @@ export default function Festival2018() {
               <h3 className="text-3xl font-light text-black mb-6">Lineup</h3>
               <div className="space-y-4">
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="text-xl font-light text-black">Main Stage</h4>
+                  <h4 className="text-xl font-light text-black">Theresa</h4>
                   <p className="text-gray-600 font-light mt-2">
-                    Electronic • Ambient • Experimental
+                    Singer/Songwriter
                   </p>
                 </div>
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black"> „Kids of Teheran“ </h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    Short film from Daniel Asadi Faezi
+                  </p>
+                </div>
+
                 <div className="border-b border-gray-200 pb-4">
                   <h4 className="text-xl font-light text-black">
-                    Art Installations
+                    PiPaPo
                   </h4>
                   <p className="text-gray-600 font-light mt-2">
-                    Interactive • Visual • Immersive
+                    Math Rock /  Indie Rock band
                   </p>
                 </div>
                 <div className="border-b border-gray-200 pb-4">
-                  <h4 className="text-xl font-light text-black">Workshops</h4>
+                  <h4 className="text-xl font-light text-black">"Approaching Truckdrivers" </h4>
                   <p className="text-gray-600 font-light mt-2">
-                    Sound Design • Visual Arts • Community Building
+                    Documentary from Daniel Asadi Faezi
                   </p>
                 </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black">Gatti Randali</h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    Balcan / Oriental / Flamenco band
+                  </p>
+                </div>
+
+                
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black"> Yaxinem</h4>
+                  <p className="text-gray-600 font-light mt-2">
+                     Hip-Hop & Trap music
+                  </p>
+                </div>
+
+                
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black">M.LCDP & Mrs.Mojo.Risin</h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    Latino / Deep House DJ set
+                  </p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black">DJ Buti (Buti Sekhalanga - DJ Buti) </h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    Afro Drumbeat DJ set
+                  </p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="text-xl font-light text-black">DJ Naitwa </h4>
+                  <p className="text-gray-600 font-light mt-2">
+                    House / Techno DJ set
+                  </p>
+                </div>
+
+
               </div>
             </div>
             <div>
@@ -145,31 +180,40 @@ export default function Festival2018() {
               <div className="space-y-6">
                 <div>
                   <h4 className="text-xl font-light text-black mb-2">
-                    Opening Ceremony
+                    Cooking Workshop with Lukas & Mouaz
                   </h4>
                   <p className="text-gray-600 font-light leading-relaxed">
-                    A collective meditation and sound bath that set the tone for
-                    three days of artistic exploration.
+                    Syrian-German fusion cooking workshop where participants learned to make traditional dishes while sharing stories and cultural insights.
                   </p>
                 </div>
+
                 <div>
                   <h4 className="text-xl font-light text-black mb-2">
-                    Community Garden
+                    Loom Workshop with Andrea
                   </h4>
                   <p className="text-gray-600 font-light leading-relaxed">
-                    Participants collaborated to create a temporary garden
-                    installation that grew throughout the festival.
+                    Weaving in the Garden
                   </p>
                 </div>
+
+                    <div>
+                  <h4 className="text-xl font-light text-black mb-2">
+                    DJ Musik Workshop with DJ dørbystarr
+                  </h4>
+                  <p className="text-gray-600 font-light leading-relaxed">
+                     DJ dørbystarr from Leipzig will be here, spinning HipHop and doing events like this. He's been doing it for 15 years! He'll be showing the ropes of being a DJ, making music, jamming, beatboxing, and freestyling. Bring your instruments!
+                  </p>
+                </div>
+
                 <div>
                   <h4 className="text-xl font-light text-black mb-2">
-                    Closing Circle
+                    Photo Workshop with Miguel
                   </h4>
                   <p className="text-gray-600 font-light leading-relaxed">
-                    A gathering where attendees shared their experiences and
-                    planted seeds for future festivals.
+                    The workshop is about the composition rules of photography. We'll look at and analyze pictures, discuss opinions, take photos, and discuss them. After that, you'll walk around Rabet Park and take pictures for the festival. A phone is sufficient, no professional camera necessary.
                   </p>
                 </div>
+
               </div>
             </div>
           </div>
@@ -192,22 +236,18 @@ export default function Festival2018() {
                 onClick={() => openCarousel(index)}
               >
                 <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
-                  <div className="text-center">
-                    <svg
-                      className="w-8 h-8 text-gray-400 mx-auto mb-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21,15 16,10 5,21" />
-                    </svg>
-                    <p className="text-xs text-gray-500 font-light">
-                      Photo {index + 1}
-                    </p>
-                  </div>
+
+                  <Image
+                    src={images[imageKeys[index]].url}
+                    alt={`Festival Photo ${index + 1}`}
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+
+                  />
                 </div>
+
               </div>
             ))}
           </div>
@@ -215,97 +255,42 @@ export default function Festival2018() {
 
         {/* Carousel Modal */}
         {isCarouselOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
-            <div className="relative w-full h-full flex items-center justify-center p-4">
-              {/* Close button */}
-              <button
-                onClick={closeCarousel}
-                className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
 
-              {/* Previous button */}
-              <button
-                onClick={previousImage}
-                className="absolute left-4 text-white hover:text-gray-300 z-10"
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
+            <button
+              onClick={closeCarousel}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+            >
+              <X className="w-6 h-6" />
+            </button>
 
-              {/* Image container */}
-              <div className="max-w-4xl max-h-full bg-gray-200 rounded-lg flex items-center justify-center">
-                <div className="w-96 h-96 flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200 rounded-lg">
-                  <div className="text-center">
-                    <svg
-                      className="w-16 h-16 text-gray-400 mx-auto mb-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21,15 16,10 5,21" />
-                    </svg>
-                    <p className="text-gray-500 font-light">
-                      Festival Photo {currentImageIndex + 1}
-                    </p>
-                    <p className="text-sm text-gray-400 mt-2">
-                      Placeholder for gallery image
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <Carousel
+              opts={{
+                startIndex: currentImageIndex,
+              }}
 
-              {/* Next button */}
-              <button
-                onClick={nextImage}
-                className="absolute right-4 text-white hover:text-gray-300 z-10"
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
+            >
+              <CarouselContent>
+                {imageKeys.map((key, index) => (
+                  <CarouselItem key={index}>
+                    <div className="flex items-center justify-center h-screen w-full">
+                      <Image
+                        src={images[key].url}
+                        alt={`Festival Photo ${index + 1}`}
+                        width={600}
+                        height={600}
+                        loading="lazy"
+                      />
+                    </div>
 
-              {/* Image counter */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
-                {currentImageIndex + 1} / 12
-              </div>
-            </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-0 text-white" />
+              <CarouselNext className="absolute right-0 text-white" />
+            </Carousel>
+
+
           </div>
         )}
       </section>

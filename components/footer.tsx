@@ -11,20 +11,6 @@ export default function Footer() {
             </h3>
             <p className="text-gray-600 font-light">Music • Art • Community</p>
           </div>
-          <div className="flex space-x-8">
-            <Link
-              href="/contact"
-              className="text-gray-600 hover:text-black transition-colors font-light"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/press"
-              className="text-gray-600 hover:text-black transition-colors font-light"
-            >
-              Press
-            </Link>
-          </div>
         </div>
         <div className="mt-12 pt-8 border-t border-gray-100 text-center">
           <p className="text-gray-500 font-light text-sm">
