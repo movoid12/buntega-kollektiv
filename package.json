@@ -5,30 +5,30 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint",
+    "lint": "eslint . --ext .ts,.tsx",
     "start": "next start"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "1.1.2",
+    "@radix-ui/react-slot": "1.2.4",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
-    "embla-carousel-react": "8.5.2",
-    "lucide-react": "0.454.0",
-    "next": "15.5.12",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "tailwind-merge": "2.6.0",
+    "embla-carousel-react": "8.6.0",
+    "lucide-react": "1.8.0",
+    "next": "16.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "tailwind-merge": "3.5.0",
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.18",
-    "@types/node": "24.10.4",
-    "@types/react": "19.2.7",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "25.6.0",
+    "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "eslint": "9.39.2",
-    "eslint-config-next": "15.5.9",
-    "postcss": "8.5.6",
-    "tailwindcss": "4.1.18",
-    "typescript": "5.8.3"
+    "eslint": "10.2.1",
+    "eslint-config-next": "16.2.4",
+    "postcss": "8.5.10",
+    "tailwindcss": "4.2.2",
+    "typescript": "6.0.3"
   }
 }
