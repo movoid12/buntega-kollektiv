@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
 export default function ContactPage() {
   return (
-    
+
     <main className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6">
       <section className="w-full max-w-2xl mb-12">
         <h1 className="text-4xl font-extralight text-black mb-8 text-center">
@@ -70,5 +70,5 @@ export default function ContactPage() {
         </form>
       </section>
     </main>
-  );
+  )
 }

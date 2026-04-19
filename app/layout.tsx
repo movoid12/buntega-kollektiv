@@ -1,35 +1,35 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import type { Metadata } from 'next'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Buntega Kollektiv",
+  title: 'Buntega Kollektiv',
   description:
-    "A vibrant community festival with interactive experiences and cultural exchange.",
+    'A vibrant community festival with interactive experiences and cultural exchange.',
   authors: [
     {
-      name: "Buntega Kollektiv",
-      url: "https://buntega-kollektiv.com",
+      name: 'Buntega Kollektiv',
+      url: 'https://buntega-kollektiv.com',
     },
   ],
   keywords: [
-    "Buntega Kollektiv",
-    "community festival",
-    "interactive experiences",
-    "cultural exchange",
-    "art and culture",
-    "music and dance",
-    "local artists",
-    "food and drink",
-    "family-friendly",
+    'Buntega Kollektiv',
+    'community festival',
+    'interactive experiences',
+    'cultural exchange',
+    'art and culture',
+    'music and dance',
+    'local artists',
+    'food and drink',
+    'family-friendly',
   ],
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
@@ -39,5 +39,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  );
+  )
 }

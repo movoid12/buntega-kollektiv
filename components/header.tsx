@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { useState } from "react";
-import MobileMenu from "./mobile-menu";
+import Link from 'next/link'
+import { useState } from 'react'
+import MobileMenu from './mobile-menu'
 
 const festivalYears = [
-  { year: "2018", description: "The Beginning" },
-  { year: "2019", description: "Evolution" },
-  { year: "2020", description: "Transformation" },
-];
+  { year: '2018', description: 'The Beginning' },
+  { year: '2019', description: 'Evolution' },
+  { year: '2020', description: 'Transformation' },
+]
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const toggleMenu = () => setIsMenuOpen((open) => !open);
+  const toggleMenu = () => setIsMenuOpen(open => !open)
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
@@ -26,7 +26,7 @@ export default function Header() {
             Buntega Kollektiv
           </Link>
           <div className="hidden md:flex items-center space-x-8">
-            {festivalYears.map((item) => (
+            {festivalYears.map(item => (
               <Link
                 key={item.year}
                 href={`/${item.year}`}
@@ -51,19 +51,22 @@ export default function Header() {
             >
               <div
                 className={`w-6 h-0.5 bg-black mb-1 transition-transform duration-300 ${
-                  isMenuOpen ? "rotate-45 translate-y-1.5" : ""
+                  isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
                 }`}
-              ></div>
+              >
+              </div>
               <div
                 className={`w-6 h-0.5 bg-black mb-1 transition-opacity duration-300 ${
-                  isMenuOpen ? "opacity-0" : ""
+                  isMenuOpen ? 'opacity-0' : ''
                 }`}
-              ></div>
+              >
+              </div>
               <div
                 className={`w-6 h-0.5 bg-black transition-transform duration-300 ${
-                  isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                  isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
                 }`}
-              ></div>
+              >
+              </div>
             </button>
           </div>
         </div>
@@ -74,5 +77,5 @@ export default function Header() {
         festivalYears={festivalYears}
       />
     </nav>
-  );
+  )
 }

@@ -40,5 +40,5 @@
 
 <br>
 
-> **Note:**  
+> **Note:**
 > For code consistency, ensure that the Prettier and ESLint extensions are enabled in your IDE.

@@ -1,12 +1,12 @@
-"use client";
-import Link from "next/link";
+'use client'
+import Link from 'next/link'
 
 export default function HomePage() {
   const festivalYears = [
-    { year: "2018", description: "The Beginning" },
-    { year: "2019", description: "Evolution" },
-    { year: "2020", description: "Transformation" },
-  ];
+    { year: '2018', description: 'The Beginning' },
+    { year: '2019', description: 'Evolution' },
+    { year: '2020', description: 'Transformation' },
+  ]
 
   return (
     <main>
@@ -29,7 +29,7 @@ export default function HomePage() {
         <section className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
-              {festivalYears.map((item) => (
+              {festivalYears.map(item => (
                 <Link
                   key={item.year}
                   href={`/${item.year}`}
@@ -55,5 +55,5 @@ export default function HomePage() {
         </section>
       </div>
     </main>
-  );
+  )
 }

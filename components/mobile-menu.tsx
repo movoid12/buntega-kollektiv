@@ -1,33 +1,34 @@
-"use client";
+'use client'
 
-import Link from "next/link";
+import Link from 'next/link'
 
-type FestivalYear = {
-  year: string;
-  description: string;
-};
+interface FestivalYear {
+  year: string
+  description: string
+}
 
-type MobileMenuProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  festivalYears: FestivalYear[];
-};
+interface MobileMenuProps {
+  isOpen: boolean
+  onClose: () => void
+  festivalYears: FestivalYear[]
+}
 
 export default function MobileMenu({
   isOpen,
   onClose,
   festivalYears,
 }: MobileMenuProps) {
-  if (!isOpen) return null;
+  if (!isOpen)
+    return null
 
   return (
     <div
       className={`md:hidden transition-all duration-300 ease-in-out ${
-        isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+        isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
       } overflow-hidden`}
     >
       <div className="flex flex-col items-center pt-4 pb-2 space-y-2">
-        {festivalYears.map((item) => (
+        {festivalYears.map(item => (
           <Link
             key={item.year}
             href={`/${item.year}`}
@@ -46,5 +47,5 @@ export default function MobileMenu({
         </Link>
       </div>
     </div>
-  );
+  )
 }

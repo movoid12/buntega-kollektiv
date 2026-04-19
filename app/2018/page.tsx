@@ -1,33 +1,33 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { ArrowLeft, X } from "lucide-react";
-import { useState } from "react";
-import { imagesFrom2018 } from "@/lib/get-images";
-import Image from "next/image";
+import { ArrowLeft, X } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
   CarouselNext,
-} from "@/components/ui/carousel";
+  CarouselPrevious,
+} from '@/components/ui/carousel'
+import { imagesFrom2018 } from '@/lib/get-images'
 
 export default function Festival2018() {
-  const [isCarouselOpen, setIsCarouselOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isCarouselOpen, setIsCarouselOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  const images = imagesFrom2018; // Assuming this is an array of image metadata for 2018
-  const imageKeys = Object.keys(images);
+  const images = imagesFrom2018 // Assuming this is an array of image metadata for 2018
+  const imageKeys = Object.keys(images)
 
   const openCarousel = (index: number) => {
-    setCurrentImageIndex(index);
-    setIsCarouselOpen(true);
-  };
+    setCurrentImageIndex(index)
+    setIsCarouselOpen(true)
+  }
 
   const closeCarousel = () => {
-    setIsCarouselOpen(false);
-  };
+    setIsCarouselOpen(false)
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -141,15 +141,12 @@ export default function Festival2018() {
                   </p>
                 </div>
 
-                
                 <div className="border-b border-gray-200 pb-4">
                   <h4 className="text-xl font-light text-black"> Yaxinem</h4>
                   <p className="text-gray-600 font-light mt-2">
-                     Hip-Hop & Trap music
+                    Hip-Hop & Trap music
                   </p>
                 </div>
-
-                
 
                 <div className="border-b border-gray-200 pb-4">
                   <h4 className="text-xl font-light text-black">M.LCDP & Mrs.Mojo.Risin</h4>
@@ -171,7 +168,6 @@ export default function Festival2018() {
                     House / Techno DJ set
                   </p>
                 </div>
-
 
               </div>
             </div>
@@ -198,12 +194,12 @@ export default function Festival2018() {
                   </p>
                 </div>
 
-                    <div>
+                <div>
                   <h4 className="text-xl font-light text-black mb-2">
                     DJ Musik Workshop with DJ dørbystarr
                   </h4>
                   <p className="text-gray-600 font-light leading-relaxed">
-                     DJ dørbystarr from Leipzig will be here, spinning HipHop and doing events like this. He&apos;s been doing it for 15 years! He&apos;ll be showing the ropes of being a DJ, making music, jamming, beatboxing, and freestyling. Bring your instruments!
+                    DJ dørbystarr from Leipzig will be here, spinning HipHop and doing events like this. He&apos;s been doing it for 15 years! He&apos;ll be showing the ropes of being a DJ, making music, jamming, beatboxing, and freestyling. Bring your instruments!
                   </p>
                 </div>
 
@@ -289,7 +285,6 @@ export default function Festival2018() {
               <CarouselNext className="absolute right-0 text-white" />
             </Carousel>
 
-
           </div>
         )}
       </section>
@@ -323,5 +318,5 @@ export default function Festival2018() {
         </div>
       </section>
     </div>
-  );
+  )
 }

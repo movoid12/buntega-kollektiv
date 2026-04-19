@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
 
 export default function AboutPage() {
   return (
@@ -72,5 +72,5 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
-  );
+  )
 }
