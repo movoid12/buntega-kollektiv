@@ -12,10 +12,14 @@ export default function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-gray-100 text-center">
           <p className="text-gray-500 font-light text-sm">
-            © {new Date().getFullYear().toString()} Buntega Kollektiv. All rights reserved.
+            ©
+            {' '}
+            {new Date().getFullYear().toString()}
+            {' '}
+            Buntega Kollektiv. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
-  );
+  )
 }

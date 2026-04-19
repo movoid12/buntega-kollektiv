@@ -1,29 +1,29 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { useState } from "react";
+import { ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Festival2020() {
-  const [isCarouselOpen, setIsCarouselOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isCarouselOpen, setIsCarouselOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const openCarousel = (index: number) => {
-    setCurrentImageIndex(index);
-    setIsCarouselOpen(true);
-  };
+    setCurrentImageIndex(index)
+    setIsCarouselOpen(true)
+  }
 
   const closeCarousel = () => {
-    setIsCarouselOpen(false);
-  };
+    setIsCarouselOpen(false)
+  }
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % 12);
-  };
+    setCurrentImageIndex(prev => (prev + 1) % 12)
+  }
 
   const previousImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + 12) % 12);
-  };
+    setCurrentImageIndex(prev => (prev - 1 + 12) % 12)
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -212,7 +212,9 @@ export default function Festival2020() {
                       <polyline points="21,15 16,10 5,21" />
                     </svg>
                     <p className="text-xs text-gray-500 font-light">
-                      Photo {index + 1}
+                      Photo
+                      {' '}
+                      {index + 1}
                     </p>
                   </div>
                 </div>
@@ -280,7 +282,9 @@ export default function Festival2020() {
                       <polyline points="21,15 16,10 5,21" />
                     </svg>
                     <p className="text-gray-500 font-light">
-                      Festival Photo {currentImageIndex + 1}
+                      Festival Photo
+                      {' '}
+                      {currentImageIndex + 1}
                     </p>
                     <p className="text-sm text-gray-400 mt-2">
                       Placeholder for gallery image
@@ -311,7 +315,9 @@ export default function Festival2020() {
 
               {/* Image counter */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
-                {currentImageIndex + 1} / 12
+                {currentImageIndex + 1}
+                {' '}
+                / 12
               </div>
             </div>
           </div>
@@ -347,5 +353,5 @@ export default function Festival2020() {
         </div>
       </section>
     </div>
-  );
+  )
 }
