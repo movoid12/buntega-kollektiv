@@ -1,6 +1,6 @@
 # GitHub Copilot Workspace Instructions
 
-These guidelines reduce common LLM coding mistakes in this repository.
+These behavioral guidelines reduce common LLM coding mistakes in this repository.
 Apply them with project-specific instructions as needed.
 
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
