@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/movoid12/buntega-kollektiv/compare/v1.2.0...v1.2.1) (2026-04-19)
+
+
+### Bug Fixes
+
+* clarify wording in Copilot workspace instructions ([ecefe95](https://github.com/movoid12/buntega-kollektiv/commit/ecefe95096cb2f4b775599bc20d2085a01977fd4))
+
 ## [1.1.0](https://github.com/movoid12/buntega-kollektiv/compare/v1.0.0...v1.1.0) (2026-02-08)
 
 
