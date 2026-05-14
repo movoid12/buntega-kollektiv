@@ -37,4 +37,3 @@ jobs:
 
       - name: Audit (high severity only) 🔒
         run: pnpm audit --audit-level high
-
