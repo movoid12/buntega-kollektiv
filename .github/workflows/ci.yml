@@ -5,6 +5,17 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+    
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'If true, skip destructive steps (default true)'
+        required: false
+        default: 'true'
+      run_tests:
+        description: 'Run tests (default true)'
+        required: false
+        default: 'true'
 
 jobs:
   build:
@@ -13,18 +24,30 @@ jobs:
       - name: Checkout repository 🛎️
         uses: actions/checkout@v4
 
-      - name: Use Node.js 22 🟢
-        uses: actions/setup-node@v4
+      - name: Use Node.js 24 🟢
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
 
       - name: Install pnpm 📦
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v6
         with:
-          version: 9
+          version: 11
 
-      - name: Install dependencies 📥
-        run: pnpm install --frozen-lockfile
+      - name: Setup
+        run: npm i -g @antfu/ni
+
+      - name: Install
+        run: nci
+
+      - name: Build
+        run: nr build
+
+      - name: Lint
+        run: nr lint
+
+      - name: Typecheck
+        run: nr typecheck
 
       - name: Audit (high severity only) 🔒
         run: pnpm audit --audit-level high
