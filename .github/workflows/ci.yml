@@ -29,21 +29,16 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install pnpm 📦
-        uses: pnpm/action-setup@v6
-        with:
-          version: 11
-
       - name: Setup
         run: npm i -g @antfu/ni
 
-      - name: Install
+      - name: Install dependencies 📦
         run: nci
 
-      - name: Build
+      - name: Build Project 🏗️
         run: nr build
 
-      - name: Lint
+      - name: Lint 🔍
         run: nr lint
 
       - name: Typecheck
@@ -52,5 +47,3 @@ jobs:
       - name: Audit (high severity only) 🔒
         run: pnpm audit --audit-level high
 
-      - name: Build 🏗️
-        run: pnpm build
